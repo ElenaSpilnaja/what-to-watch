@@ -38,57 +38,68 @@ export const filmsFilter = [
   {
     filmId: 7,
     title: `Revenant`,
-    image: `img/revenant.jpg`
+    image: `img/revenant.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 8,
     title: `Johnny English`,
-    image: `img/johnny-english.jpg`
+    image: `img/johnny-english.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 9,
     title: `Shutter Island`,
-    image: `img/shutter-island.jpg`
+    image: `img/shutter-island.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 10,
     title: `Pulp Fiction`,
-    image: `img/pulp-fiction.jpg`
+    image: `img/pulp-fiction.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 11,
     title: `No Country for Old Men`,
-    image: `img/no-country-for-old-men.jpg`
+    image: `img/no-country-for-old-men.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 12,
     title: `Snatch`,
-    image: `img/snatch.jpg`
+    image: `img/snatch.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 13,
     title: `Moonrise Kingdom`,
-    image: `img/moonrise-kingdom.jpg`
+    image: `img/moonrise-kingdom.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 14,
     title: `Seven Years in Tibet`,
-    image: `img/seven-years-in-tibet.jpg`
+    image: `img/seven-years-in-tibet.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 15,
     title: `Midnight Special`,
-    image: `img/midnight-special.jpg`
+    image: `img/midnight-special.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 16,
     title: `War of the Worlds`,
-    image: `img/war-of-the-worlds.jpg`
+    image: `img/war-of-the-worlds.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   },
   {
     filmId: 17,
     title: `Dardjeeling Limited`,
-    image: `img/dardjeeling-limited.jpg`
+    image: `img/dardjeeling-limited.jpg`,
+    video: `https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6c/Cassini%27s_Grand_Finale.ogv/Cassini%27s_Grand_Finale.ogv.360p.vp9.webm`
   }
 ];
 
@@ -105,7 +116,10 @@ export const films = [
     ratingName: getRatingName(6.6),
     numberOfReviews: 212,
     description: [
-      `In an effort to thwart Grindelwald\`s plans of raising pure-blood wizards to rule over all non-magical beings, Albus Dumbledore enlists his former student Newt Scamander, who agrees to help, though he\`s unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world.`,
+      `In an effort to thwart Grindelwald\`s plans of raising pure-blood wizards to rule over all non-magical beings,
+      Albus Dumbledore enlists his former student Newt Scamander, who agrees to help, though he\`s unaware of the
+      dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family,
+      in an increasingly divided wizarding world.`
     ],
     director: `David Yates`,
     stars: [

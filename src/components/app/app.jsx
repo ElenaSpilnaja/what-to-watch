@@ -1,29 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {Main} from "../main/main";
+import Main from "../main/main";
 import {SignIn} from "../../pages/sign-in/sign-in";
-import {MyList} from "../../pages/my-list/my-list";
+import MyList from "../../pages/my-list/my-list";
 import {Film} from "../../pages/film/film";
 import {AddReview} from "../../pages/add-review/add-review";
 import {Player} from "../../pages/player/player";
 
+
 const App = (props) => {
-  const {films, reviews, infoForFilter} = props;
+  const {films, infoForFilter} = props;
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <Main films={infoForFilter}/>
+          <Main filmsFilter={infoForFilter}/>
         </Route>
         <Route path="/login" exact>
           <SignIn/>
         </Route>
         <Route path="/mylist" exact>
-          <MyList/>
+          <MyList filmsFilter={infoForFilter}/>
         </Route>
         <Route path="/films/1" exact>
-          <Film/>
+          <Film films={films}/>
         </Route>
         <Route path="/films/1/review" exact>
           <AddReview/>
@@ -47,7 +48,7 @@ App.propTypes = {
         trailer: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired,
         rating: PropTypes.number.isRequired,
-        ratingName: PropTypes.func.isRequired,
+        ratingName: PropTypes.string.isRequired,
         numberOfReviews: PropTypes.number.isRequired,
         description: PropTypes.arrayOf(PropTypes.string).isRequired,
         director: PropTypes.string.isRequired,
@@ -55,7 +56,7 @@ App.propTypes = {
         runTime: PropTypes.string.isRequired
       })
   ),
-  reviews: PropTypes.arrayOf(
+  /* reviews: PropTypes.arrayOf(
       PropTypes.shape({
         filmId: PropTypes.number.isRequired,
         filmTitle: PropTypes.string.isRequired,
@@ -67,7 +68,7 @@ App.propTypes = {
           description: PropTypes.arrayOf(PropTypes.string).isRequired,
         }))
       })
-  ),
+  ),*/
   infoForFilter: PropTypes.arrayOf(
       PropTypes.shape({
         filmId: PropTypes.number.isRequired,
@@ -77,4 +78,4 @@ App.propTypes = {
       })
   ),
 };
-export {App};
+export default App;

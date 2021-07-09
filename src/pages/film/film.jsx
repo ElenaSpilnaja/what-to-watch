@@ -1,12 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const Film = () => {
+const Film = (props) => {
+  const {films} = props;
+  const film = films[1];
   return (
     <React.Fragment>
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
+            <img src={film.filmBgImage} alt={film.filmTitle}/>
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -29,10 +33,10 @@ const Film = () => {
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="movie-card__title">{film.filmTitle}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">Drama</span>
-                <span className="movie-card__year">2014</span>
+                <span className="movie-card__genre">{film.genre}</span>
+                <span className="movie-card__year">{film.year}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -57,7 +61,7 @@ const Film = () => {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327"/>
+              <img src={film.filmImage} alt={film.filmTitle} width="218" height="327"/>
             </div>
 
             <div className="movie-card__desc">
@@ -76,25 +80,23 @@ const Film = () => {
               </nav>
 
               <div className="movie-rating">
-                <div className="movie-rating__score">8,9</div>
+                <div className="movie-rating__score">{film.rating}</div>
                 <p className="movie-rating__meta">
-                  <span className="movie-rating__level">Very good</span>
-                  <span className="movie-rating__count">240 ratings</span>
+                  <span className="movie-rating__level">{film.ratingName}</span>
+                  <span className="movie-rating__count">{film.numberOfReviews} ratings</span>
                 </p>
               </div>
 
               <div className="movie-card__text">
-                <p>In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge
-                  Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave&apos;s friend and protege.</p>
+                {film.description.map((text) => {
+                  return <p key={film.filmId + 1}>{text}</p>;
+                })}
 
-                <p>Gustave prides himself on providing first-class service to the hotel&apos;s guests, including satisfying
-                  the sexual needs of the many elderly women who stay there. When one of Gustave&apos;s lovers dies
-                  mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her
-                  murder.</p>
+                <p className="movie-card__director"><strong>Director: {film.director}</strong></p>
 
-                <p className="movie-card__director"><strong>Director: Wes Andreson</strong></p>
-
-                <p className="movie-card__starring"><strong>Starring: Bill Murray, Edward Norton, Jude Law, Willem Dafoe
+                <p className="movie-card__starring"><strong>Starring: {film.stars.map((star) => {
+                  return <text key={film.filmId + 2}>{star}, </text>;
+                })}
                   and other</strong></p>
               </div>
             </div>
@@ -111,8 +113,8 @@ const Film = () => {
                 <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
               </div>
               <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">Fantastic Beasts: The Crimes of
-                  Grindelwald</a>
+                <Link className="small-movie-card__link" to="/films/1">Fantastic Beasts: The Crimes of
+                  Grindelwald</Link>
               </h3>
             </article>
 
@@ -163,3 +165,23 @@ const Film = () => {
   );
 };
 export {Film};
+Film.propTypes = {
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        filmId: PropTypes.number.isRequired,
+        filmTitle: PropTypes.string.isRequired,
+        filmImage: PropTypes.string.isRequired,
+        filmBgImage: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
+        trailer: PropTypes.string.isRequired,
+        year: PropTypes.number.isRequired,
+        rating: PropTypes.number.isRequired,
+        ratingName: PropTypes.string.isRequired,
+        numberOfReviews: PropTypes.number.isRequired,
+        description: PropTypes.arrayOf(PropTypes.string).isRequired,
+        director: PropTypes.string.isRequired,
+        stars: PropTypes.arrayOf(PropTypes.string).isRequired,
+        runTime: PropTypes.string.isRequired
+      })
+  )
+};
