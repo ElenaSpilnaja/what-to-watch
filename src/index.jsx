@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {App} from "./components/app/app";
-
-const film = {title: `The Grand Budapest Hotel`, genre: `Drama`, year: 2014};
+import App from "./components/app/app";
+import {films, filmsFilter} from "./mocks/films";
 ReactDOM.render(
-    <App film={film}/>,
+    <App films={films} infoForFilter={filmsFilter}/>,
     document.querySelector(`#root`)
 );
